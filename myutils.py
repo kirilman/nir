@@ -20,6 +20,10 @@ def table_from_MarkovChain(markov_model):
 def get_path_with_viterbi(model):
     path = model.viterbi()
     return path
+
+def rename_state(x):
+    a = 's'+x
+    return a
 # if __name__ == "__main__":
 #     a = ['a','b','c','d','b']
 #

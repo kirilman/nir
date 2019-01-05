@@ -1,2 +1,6 @@
 source venv/bin/activate - запуск вирт среды
 source activate nir
+
+git
+git commit - m ''
+git push
