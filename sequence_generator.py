@@ -1,12 +1,11 @@
 import numpy as np
 import random
-
 def gaussian_generator(mean, deviation, sample_size):
     data = np.array([np.random.normal(mean,deviation) for x in range(sample_size)])
     return data
 
 class Sequence:
-    def __init__(self, n, alphabet, period = 0, type = None, p = None):
+    def __init__(self, n, alphabet = [], period = 0, type = None, p = None):
         self.n = n
         self.period = period
         self.alphabet = sorted(alphabet)
@@ -24,7 +23,6 @@ class Sequence:
     def random(self,p):
         h = np.zeros((len(p) + 1, 2))
         for i in range(len(p)+1):
-            print(i)
             if i == 0:
                 h[i,0] = 0; h[i,1] = p[i]
             else:
@@ -32,7 +30,7 @@ class Sequence:
                     h[i,0] = p[i-1]; h[i,1] = 1
                 else:
                     h[i,0] = p[i-1]; h[i,1] = p[i]
-        print(h)
+        # print(h)
 
         for _ in range(self.n):
             r = random.uniform(0, 1)
@@ -41,6 +39,37 @@ class Sequence:
                     self.sequence += self.alphabet[i]
                     continue
 
+
+    def test_discrete(self,params=None):
+        if params == None:
+            params = {'a': {'len': [2, 2], 'depend_on': False},
+                      'b': {'len': [2, 4], 'depend_on': False},
+                      'c': {'len': [0, 2], 'depend_on': False},
+                      'd': {'len': [1, 3], 'depend_on': 'c' },
+                      'e': {'len': [1, 3], 'depend_on': True}}
+        length = 0
+        print(params)
+        for key, item in params.items():
+            length += max(item['len'])
+
+        count_cycle = round(self.n/length)
+
+        is_first = True
+        for i in enumerate(range(count_cycle)):
+            for s in self.alphabet:
+                if is_first == True:   #Обработка для первого элемента списка
+                    r = np.random.choice(range(params[s]['len'][0], params[s]['len'][1] + 1))
+                    for _ in range(r):
+                        self.sequence.append(s)
+                    is_first = False
+                else:
+                    if params[s]['depend_on'] == self.sequence[-1]:
+                        continue
+                    else:
+                        r = np.random.choice( range(params[s]['len'][0], params[s]['len'][1] + 1))
+                        for _ in range(r):
+                            self.sequence.append(s)
+        self.n = len(self.sequence)
 
     def periodic(self):
         m = self.n // len(self.alphabet)
@@ -52,7 +81,7 @@ class Sequence:
                 for k in range(rest):
                     self.sequence += self.alphabet[k]
 
-    def unormal(self,p):
+    def anormal(self,p):
         x = self.sequence.copy()
         n = round(self.n*p)
         for i in range(n):
@@ -117,6 +146,38 @@ class Sequence:
             seq_stages += [current_stage]
         return list(data), seq_stages
 
+class Signal(Sequence):
+    def __init__(self, n, count_stage, mean, varience, t ):
+        super().__init__(n)
+        self.n = n
+        self.count_stage = count_stage
+        self.mean = mean
+        self.varience = varience
+        self.t = t
+        self.sequence, self.path = self.create_signal()
+
+    def create_signal (self):
+        l = 0
+        sequence = []
+        path = []
+        current_stage = 0
+        while(True):
+            n = int(np.random.uniform(self.t[0], self.t[1]))
+            l += n
+            if l < self.n:
+                path = path + [current_stage]*n
+                sequence = sequence + np.random.normal(self.mean[current_stage], self.varience[current_stage], n).tolist()
+                if current_stage < self.count_stage - 1:
+                    current_stage+=1
+                else:
+                    current_stage=0
+            else:
+                n = self.n - len(path)
+                path = path + [current_stage] * n
+                sequence = sequence + np.random.normal(self.mean[current_stage], self.varience[current_stage],
+                                                       n).tolist()
+                break
+        return sequence, path
 
 
 # def periodic(len, simbols):
@@ -129,3 +190,4 @@ class Sequence:
 #     return seq
 #
 # periodic(10,['a','b'])
+
