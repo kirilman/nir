@@ -19,6 +19,8 @@ class Sequence:
             self.random(p)
         if type == 'signal':
             self.sequence, stages = self.signal_()
+        if type == 'test_discret':
+            self.test_discrete()
 
     def random(self,p):
         h = np.zeros((len(p) + 1, 2))
@@ -42,23 +44,27 @@ class Sequence:
 
     def test_discrete(self,params=None):
         if params == None:
-            params = {'a': {'len': [2, 2], 'depend_on': False},
-                      'b': {'len': [2, 4], 'depend_on': False},
-                      'c': {'len': [0, 2], 'depend_on': False},
-                      'd': {'len': [1, 3], 'depend_on': 'c' },
+            params = {'a': {'len': [2, 5], 'depend_on': False},
+                      'b': {'len': [2, 10], 'depend_on': False},
+                      'c': {'len': [2, 7], 'depend_on': False},
+                      'd': {'len': [1, 5], 'depend_on': 'c' },
                       'e': {'len': [1, 3], 'depend_on': True}}
         length = 0
-        print(params)
+
+        # print(params)
         for key, item in params.items():
             length += max(item['len'])
-
+            
         count_cycle = round(self.n/length)
 
         is_first = True
-        for i in enumerate(range(count_cycle)):
+
+        rest = self.n
+        while rest>0:
             for s in self.alphabet:
                 if is_first == True:   #Обработка для первого элемента списка
                     r = np.random.choice(range(params[s]['len'][0], params[s]['len'][1] + 1))
+                    rest-=r
                     for _ in range(r):
                         self.sequence.append(s)
                     is_first = False
@@ -67,8 +73,28 @@ class Sequence:
                         continue
                     else:
                         r = np.random.choice( range(params[s]['len'][0], params[s]['len'][1] + 1))
-                        for _ in range(r):
-                            self.sequence.append(s)
+                        if rest < r:
+                            for _ in range(rest):
+                                self.sequence.append(s)
+                        else:
+                            for _ in range(r):
+                                self.sequence.append(s)
+                        rest-=r
+        
+        # for i in enumerate(range(count_cycle)):
+        #     for s in self.alphabet:
+        #         if is_first == True:   #Обработка для первого элемента списка
+        #             r = np.random.choice(range(params[s]['len'][0], params[s]['len'][1] + 1))
+        #             for _ in range(r):
+        #                 self.sequence.append(s)
+        #             is_first = False
+        #         else:
+        #             if params[s]['depend_on'] == self.sequence[-1]:
+        #                 continue
+        #             else:
+        #                 r = np.random.choice( range(params[s]['len'][0], params[s]['len'][1] + 1))
+        #                 for _ in range(r):
+        #                     self.sequence.append(s)
         self.n = len(self.sequence)
 
     def periodic(self):
