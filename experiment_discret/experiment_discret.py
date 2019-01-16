@@ -1,5 +1,6 @@
 import sys
 sys.path.append('/home/kirill/Projects/NIR')
+sys.path.append('/home/kirill/Projects/NIR')
 sys.path.append('/home/kirilman/Projects/nir/nir/')
 import myutils
 import sequence_generator as generator
@@ -59,6 +60,7 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
     plt.plot(normal_seq,'b')
     plt.plot(normal_seq,'b.')
     plt.grid()
+    plt.yticks(range(len(alpha)),alpha)
     plt.savefig('Дискретный с невозможным переходом'+str(num_launch)+'.png',dpi = 150)
     # plt.show()
 
@@ -71,6 +73,7 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
             fig_sequence = plt.figure(dpi = 140)
             plt.plot(seq,'b.')
             plt.plot(seq,'b')
+            plt.yticks(range(len(alpha)), alpha)
             plt.savefig('Graphs/График последовательностей'+str(i)+'.png')
         log_prob_arr += [ model.log_probability(seq)]
     
@@ -79,12 +82,9 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
     fig_log = plt.figure(figsize=(3.5,10))
     plt.plot([1]*len(log_prob_arr), log_prob_arr, '.',markersize = 15)
     plt.plot([1], anormal_score, 'r.',markersize = 15)
-   
     # plt.plot([1], normal_score, 'g.',markersize = 15)
-
     plt.ylabel('log probability')
     plt.xlim(0.95, 1.05)
-   
     plt.tight_layout()
     plt.savefig('График log_probability'+str(num_launch)+'.png', dpi = 140)
     # plt.show()
@@ -95,6 +95,24 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
 #         for t in table:
 #             file.write(str(t)+'\n')
 #     print(model.distributions[1])
+
+
+# Совместный график
+    fig_sub, ax = plt.subplots(1, dpi = 140)
+    ax.plot(anormal_seq,'r')
+    ax.plot(normal_seq,'b')
+    ax.plot(normal_seq,'b.')
+    ax.grid()
+    ax.set_yticks(range(len(alpha)),alpha)
+
+    ax2 = fig_sub.add_axes([1, 0.12, 0.15, 0.76])
+    ax2.plot([1]*len(log_prob_arr), log_prob_arr, '.',markersize = 15)
+    ax2.plot([1], anormal_score, 'r.',markersize = 15)
+    ax2.set_ylabel('log probability')
+    ax2.set_xlim(0.95, 1.05)
+    plt.tight_layout()
+
+    plt.savefig('Graphs/Log_and_seq/gh_'+str(num_launch)+'.png',dpi=140)
     plt.close('all')
     return model
 
@@ -102,8 +120,9 @@ if __name__ == "__main__":
     N = 100
     arr_seqs = []
 
-    count = 5
+    count = 3
     for i in range(count):
+        np.random.seed(i)  # Для случайной инициализации модели
         alpha = ['a','b','c','d','e']
         sequence = generator.Sequence(N,alpha,type='test_discret',p=[0.05,0.1,0.4,0.8])
 
@@ -112,7 +131,7 @@ if __name__ == "__main__":
         print(normal_seq[:15])
 
         arr_seqs += [normal_seq]
-        #Аномальная последовательность
+    #Аномальная последовательность
     #     anormal_seq = sequence.anormal(p)
         start, stop, simbol = get_slice(normal_seq)
 
@@ -130,7 +149,7 @@ if __name__ == "__main__":
         # model = MarkovChain.from_samples([normal_seq]);
         gc.collect()
         model_hmm = HiddenMarkovModel.from_samples(DiscreteDistribution,n_components = 5,X=[normal_seq]);
-
+        model_hmm.bake()
         experiment_discret(model = model_hmm,normal_seq =  normal_seq,anormal_seq = anormal_seq,N = N, num_launch=i)
         print(id(model_hmm))      
         print('seq',id(sequence))

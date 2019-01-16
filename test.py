@@ -108,8 +108,3 @@ start, stop = get_slice(s)
 print(start, stop)
 
 print(s[start:stop])
-
-
-a = 510
-del a
-print(a)
