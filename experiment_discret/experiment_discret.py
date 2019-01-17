@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pylab as plt
 from pomegranate import HiddenMarkovModel, DiscreteDistribution
 from myutils import frequency_occurrence
-plt.rcParams.update({'font.size': 18})
+plt.rcParams.update({'font.size': 17})
 import gc
 
 
@@ -85,7 +85,7 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
     # plt.plot([1], normal_score, 'g.',markersize = 15)
     plt.ylabel('log probability')
     plt.xlim(0.95, 1.05)
-    plt.tight_layout()
+    # plt.tight_layout()
     plt.savefig('График log_probability'+str(num_launch)+'.png', dpi = 140)
     # plt.show()
     #print(model.to_json())
@@ -98,21 +98,26 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
 
 
 # Совместный график
-    fig_sub, ax = plt.subplots(1, dpi = 140)
+    fig_sub = plt.figure(figsize = (10,6))
+
+    ax2 = fig_sub.add_axes([0.12, 0.1, 0.07, 0.8])
+    ax2.plot([1] * len(log_prob_arr), log_prob_arr, '.', markersize=15)
+    ax2.plot([1], anormal_score, 'r.', markersize=15)
+    ax2.set_ylabel('log probability')
+    # ax2.set_xlim(0.9, 1.2)
+    ax2.set_xticks([0.95,1,1.05])
+    ax2.set_xticklabels(['','1',''])
+
+    ax = fig_sub.add_axes([0.24, 0.1, 0.74, 0.8])
     ax.plot(anormal_seq,'r')
     ax.plot(normal_seq,'b')
     ax.plot(normal_seq,'b.')
     ax.grid()
-    ax.set_yticks(range(len(alpha)),alpha)
+    ax.set_yticks(range(len(alpha)))
+    ax2.set_xticklabels(alpha)
 
-    ax2 = fig_sub.add_axes([1, 0.12, 0.15, 0.76])
-    ax2.plot([1]*len(log_prob_arr), log_prob_arr, '.',markersize = 15)
-    ax2.plot([1], anormal_score, 'r.',markersize = 15)
-    ax2.set_ylabel('log probability')
-    ax2.set_xlim(0.95, 1.05)
-    plt.tight_layout()
-
-    plt.savefig('Graphs/Log_and_seq/gh_'+str(num_launch)+'.png',dpi=140)
+# plt.tight_layout()
+    plt.savefig('Graphs/Log_and_seq/gh_'+str(num_launch)+'.png',dpi=100)
     plt.close('all')
     return model
 
@@ -120,7 +125,7 @@ if __name__ == "__main__":
     N = 100
     arr_seqs = []
 
-    count = 3
+    count = 15
     for i in range(count):
         np.random.seed(i)  # Для случайной инициализации модели
         alpha = ['a','b','c','d','e']

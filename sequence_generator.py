@@ -5,7 +5,7 @@ def gaussian_generator(mean, deviation, sample_size):
     return data
 
 class Sequence:
-    def __init__(self, n, alphabet = [], period = 0, type = None, p = None):
+    def __init__(self, n, alphabet = [], period = 0, type = None, p = None, params = None):
         self.n = n
         self.period = period
         self.alphabet = sorted(alphabet)
@@ -20,7 +20,7 @@ class Sequence:
         if type == 'signal':
             self.sequence, stages = self.signal_()
         if type == 'test_discret':
-            self.test_discrete()
+            self.test_discrete(params)
 
     def random(self,p):
         h = np.zeros((len(p) + 1, 2))

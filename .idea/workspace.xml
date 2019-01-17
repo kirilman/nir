@@ -27,12 +27,11 @@
       <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом2.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом3.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом4.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/MultivatiateGaussianDistribution.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/MultivatiateGaussianDistribution.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Test Sequence-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Test Sequence-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/Test Sequence.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Test Sequence.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/experiment1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/experiment1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/Дискретный с невозможным переходом.png" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Дискретный с невозможным переходом.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_generator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,46 +56,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiment_discret/experiment_discret.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="107" column="52" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
+            <state relative-caret-position="866">
+              <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_generator.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sequence_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="-666">
+              <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-701792/pomegranate/hmm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22986">
-              <caret line="1294" column="13" selection-start-line="1294" selection-start-column="13" selection-end-line="1294" selection-end-column="13" />
-              <folding>
-                <element signature="e#196#260#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,15 +104,15 @@
         <option value="$USER_HOME$/.conda/envs/nir/lib/python3.6/site-packages/networkx/drawing/nx_pylab.py" />
         <option value="$PROJECT_DIR$/model.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/sequence_generator.py" />
         <option value="$PROJECT_DIR$/myutils.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test_generator.py" />
         <option value="$PROJECT_DIR$/experiment_discret/experiment_discret.py" />
+        <option value="$PROJECT_DIR$/sequence_generator.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="131" />
     <option name="y" value="27" />
     <option name="width" value="1400" />
@@ -149,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -161,6 +135,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,6 +281,14 @@
       <option name="presentableId" value="Default" />
       <updated>1544959742223</updated>
     </task>
+    <task id="LOCAL-00001" summary="re">
+      <created>1547646830423</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1547646830423</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -318,21 +301,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="-1" width="1686" height="1016" extended-state="7" />
+    <frame x="-3" y="-1" width="1686" height="1015" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49911818" visible="true" weight="0.16415209" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49911818" visible="true" weight="0.16415209" />
       <window_info id="Structure" order="1" sideWeight="0.50088185" side_tool="true" weight="0.24945295" />
       <window_info id="Favorites" order="2" sideWeight="0.50088185" side_tool="true" weight="0.24945295" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.499388" visible="true" weight="0.18110237" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.499388" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39932507" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.07311586" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5444319" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.63033706" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.29021373" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.62992126" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.500612" side_tool="true" weight="0.3764045" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32845894" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -349,6 +332,10 @@
         <option value="1" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="re" />
+    <option name="LAST_COMMIT_MESSAGE" value="re" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -367,11 +354,6 @@
           <url>file://$PROJECT_DIR$/model.py</url>
           <line>51</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/sequence_generator.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
@@ -516,18 +498,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence_generator.py">
+    <entry file="file://$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом0.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/nir/lib/python3.6/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="-2196">
+          <caret line="430" column="4" selection-start-line="430" selection-start-column="4" selection-end-line="430" selection-end-column="4" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#536#644#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом0.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/myutils.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -535,26 +517,6 @@
           <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-701792/pomegranate/hmm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22986">
-          <caret line="1294" column="13" selection-start-line="1294" selection-start-column="13" selection-end-line="1294" selection-end-column="13" />
-          <folding>
-            <element signature="e#196#260#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -569,20 +531,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/nir/lib/python3.6/site-packages/matplotlib/pyplot.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-701792/pomegranate/hmm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2196">
-          <caret line="430" column="4" selection-start-line="430" selection-start-column="4" selection-end-line="430" selection-end-column="4" />
+        <state relative-caret-position="506">
+          <caret line="1294" column="13" selection-start-line="1294" selection-start-column="13" selection-end-line="1294" selection-end-column="13" />
           <folding>
-            <element signature="e#536#644#0" expanded="true" />
+            <element signature="e#196#260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiment_discret/experiment_discret.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="107" column="52" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
+        <state relative-caret-position="866">
+          <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-666">
+          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
