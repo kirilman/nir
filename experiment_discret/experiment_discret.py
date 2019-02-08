@@ -1,20 +1,28 @@
 import sys
+import os
 sys.path.append('/home/kirill/Projects/NIR')
 sys.path.append('/home/kirill/Projects/NIR')
 sys.path.append('/home/kirilman/Projects/nir/nir/')
-import myutils
 import sequence_generator as generator
 import numpy as np
 import matplotlib.pylab as plt
-from pomegranate import HiddenMarkovModel, DiscreteDistribution
+from pomegranate import HiddenMarkovModel, DiscreteDistribution, MarkovChain
 from myutils import frequency_occurrence
 plt.rcParams.update({'font.size': 17})
 import gc
-
+from myutils import print_model_distribution
+import myutils
 
 def get_slice(s):
+    """
+    Получить случайно выбранную подпоследовательность из одного и того же символа с
+    Returns:
+      start : индекс начала подпоследовательности
+      stop : индекс окончания
+      с : символ       
+    """
     m = np.random.choice(range(len(s)))
-    # m = 0
+    # m = len(s) - 1
 
     c = s[m]
     start, stop = 0,0
@@ -39,6 +47,7 @@ def get_slice(s):
                     stop = m + i
                     flag_2 = False
         i+=1
+    print(start, stop, len(s))
     return start, stop, c   
 
 def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c','d','e'],p = 0.05, num_launch = 0):
@@ -52,15 +61,18 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
     normal_score+=[model.log_probability(normal_seq)]
 #     print(model.distributions[1])
     anormal_score+=[model.log_probability(anormal_seq)]
+    print(anormal_score[0])
+    if anormal_score[0] == float('-inf'):
+        anormal_score[0] = -1500
     # print("Нормальный {}, Аномальный {}".format(normal_score[0],anormal_score[0]))
 
     #Построение графика
     fig_seq = plt.figure(dpi = 150)
+    plt.plot(alpha,'w')
     plt.plot(anormal_seq,'r')    
     plt.plot(normal_seq,'b')
     plt.plot(normal_seq,'b.')
     plt.grid()
-    plt.yticks(range(len(alpha)),alpha)
     plt.savefig('Дискретный с невозможным переходом'+str(num_launch)+'.png',dpi = 150)
     # plt.show()
 
@@ -69,12 +81,12 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
     for i in range(100):
         sequence = generator.Sequence(N,alpha,type='test_discret',p=[0.05,0.1,0.4,0.8])
         seq = sequence.sequence
-        if i%10 == 0:
+        if i%50 == 0:
             fig_sequence = plt.figure(dpi = 140)
+            plt.plot(alpha,'w')
             plt.plot(seq,'b.')
             plt.plot(seq,'b')
-            plt.yticks(range(len(alpha)), alpha)
-            plt.savefig('Graphs/График последовательностей'+str(i)+'.png')
+            plt.savefig('/home/kirilman/Projects/nir/nir/experiment_discret/Graphs/sequence_graph__'+str(i)+'.png')
         log_prob_arr += [ model.log_probability(seq)]
     
     plt.close()
@@ -102,13 +114,17 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
 
     ax2 = fig_sub.add_axes([0.12, 0.1, 0.07, 0.8])
     ax2.plot([1] * len(log_prob_arr), log_prob_arr, '.', markersize=15)
-    ax2.plot([1], anormal_score, 'r.', markersize=15)
+    ax2.plot([1], anormal_score, 'r*', markersize=15)
+    ax2.plot([1], normal_score, 'g*', markersize=12)
+
     ax2.set_ylabel('log probability')
     # ax2.set_xlim(0.9, 1.2)
     ax2.set_xticks([0.95,1,1.05])
     ax2.set_xticklabels(['','1',''])
 
     ax = fig_sub.add_axes([0.24, 0.1, 0.74, 0.8])
+    ax.plot(alpha,'w')
+    ax.plot(anormal_seq,'r.')
     ax.plot(anormal_seq,'r')
     ax.plot(normal_seq,'b')
     ax.plot(normal_seq,'b.')
@@ -117,19 +133,20 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
     ax2.set_xticklabels(alpha)
 
 # plt.tight_layout()
-    plt.savefig('Graphs/Log_and_seq/gh_'+str(num_launch)+'.png',dpi=100)
+    plt.savefig('/home/kirilman/Projects/nir/nir/experiment_discret/Graphs/Log_and_seq/gh_'+str(num_launch)+'.png',dpi=100)
     plt.close('all')
     return model
 
 if __name__ == "__main__":
-    N = 100
+    N = 150
     arr_seqs = []
-
-    count = 15
+    N_train = 3000
+    count = 25
+    file = open('result.txt','w')
     for i in range(count):
         np.random.seed(i)  # Для случайной инициализации модели
         alpha = ['a','b','c','d','e']
-        sequence = generator.Sequence(N,alpha,type='test_discret',p=[0.05,0.1,0.4,0.8])
+        sequence = generator.Sequence(N_train,alpha,type='test_discret',p=[0.05,0.1,0.4,0.8])
 
         
         normal_seq = sequence.sequence.copy()
@@ -138,24 +155,64 @@ if __name__ == "__main__":
         arr_seqs += [normal_seq]
     #Аномальная последовательность
     #     anormal_seq = sequence.anormal(p)
-        start, stop, simbol = get_slice(normal_seq)
+        anormal_seq = normal_seq[:N].copy()
 
-        anormal_seq = normal_seq.copy()
-        
-        if stop == len(normal_seq) - 1:
-            anormal_seq[start:stop] = [anormal_seq[start-1]*(stop - start)]
+        start, stop, simbol = get_slice(normal_seq[:N])
+        if stop == len(anormal_seq):
+            # anormal_seq[start:stop] = [normal_seq[start-1]]*(stop - start)
+            new_s = normal_seq[np.random.choice(range(100))]
+            while new_s == simbol:
+                new_s = normal_seq[np.random.choice(range(100))]
+            anormal_seq[start:stop] = [new_s]*(stop - start)
+
         else:
-            anormal_seq[start:stop] = [anormal_seq[stop+1]]*(stop - start)
+            # anormal_seq[start:stop] = [normal_seq[stop+1]]*(stop - start)
+            new_s = normal_seq[np.random.choice(range(100))]
+            while new_s == simbol:
+                new_s = normal_seq[np.random.choice(range(100))]
+            anormal_seq[start:stop] = [new_s]*(stop - start)
+
+        start, stop, simbol = get_slice(normal_seq[:N])
+        if stop == len(anormal_seq):
+            # anormal_seq[start:stop] = [normal_seq[start-1]]*(stop - start)
+            new_s = normal_seq[np.random.choice(range(100))]
+            while new_s == simbol:
+                new_s = normal_seq[np.random.choice(range(100))]
+            anormal_seq[start:stop] = [new_s]*(stop - start)
+
+        else:
+            # anormal_seq[start:stop] = [normal_seq[stop+1]]*(stop - start)
+            new_s = normal_seq[np.random.choice(range(100))]
+            while new_s == simbol:
+                new_s = normal_seq[np.random.choice(range(100))]
+            anormal_seq[start:stop] = [new_s]*(stop - start)
     #     n_count = 5
     #     anormal_seq[20:20+n_count] = ['b']*n_count
         
         # print('Длина нормальной ',len(normal_seq),', аномальной ', len(anormal_seq))
     #Модель
-        # model = MarkovChain.from_samples([normal_seq]);
+
+        # model_hmm = MarkovChain.from_samples([normal_seq]);
         gc.collect()
-        model_hmm = HiddenMarkovModel.from_samples(DiscreteDistribution,n_components = 5,X=[normal_seq]);
-        model_hmm.bake()
-        experiment_discret(model = model_hmm,normal_seq =  normal_seq,anormal_seq = anormal_seq,N = N, num_launch=i)
+        print(normal_seq[-5:])
+        labels = list(map(myutils.rename_state,sequence.path))
+        # plt.plot(normal_seq)
+        # # break
+        model_hmm = HiddenMarkovModel.from_samples(DiscreteDistribution,n_components = len(alpha),X=[normal_seq],
+                                                    labels = [labels] , algorithm = 'labeled');
+        # model_hmm = HiddenMarkovModel.from_samples(DiscreteDistribution,n_components = len(alpha),X=[normal_seq]);
+
+        # model_hmm.bake()
+        experiment_discret(model = model_hmm,normal_seq =  normal_seq[:N],anormal_seq = anormal_seq,N = N, num_launch=i)
+
+# Вывод в файл
+        file.write(str(i)+'\n')
+        
+        if isinstance(model_hmm,HiddenMarkovModel):
+            out = print_model_distribution(model_hmm)
+        else:
+            out = str(myutils.table_from_MarkovChain(model_hmm))
+        file.write(out)
         print(id(model_hmm))      
         print('seq',id(sequence))
         del(model_hmm)
@@ -163,6 +220,7 @@ if __name__ == "__main__":
         # print(model_hmm)
     
         gc.collect()
+    file.close()
     for s in arr_seqs:
         plt.plot(s)
     plt.show()

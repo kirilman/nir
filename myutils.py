@@ -23,7 +23,7 @@ def get_path_with_viterbi(model):
     return path
 
 def rename_state(x):
-    a = 's'+x
+    a = 's' + str(x)
     return a
 
 def get_y_train(x):
@@ -65,6 +65,52 @@ def plot_scatter_test_predict(data,y_true,y_pred,dpi = 100, random = False, coun
         ax[0].scatter(data[:,0], data[:,1], c = y_true)
         ax[1].scatter(data[:,0], data[:,1], c = y_pred)
     return
+
+
+def print_model_distribution(model):
+    """
+        Формирует строку содержащую матрицу испусканий и матрицу переходов,
+        для вывода в файл
+    """
+    out = '{0:>10}  {1:<15}\n'.format('Состояние', 'Вероятность испускания')
+    states = []
+    for state in model.states:
+        out+='{:>10}: '.format(state.name)
+        try:
+            if len(state.distribution.parameters) > 1:
+                print('Количество параметров распределения больше 1')            
+            for k,v in state.distribution.parameters[0].items():
+                temp = "'{}' = {:4.2E};    ".format(k,v)
+                out +=temp
+            out+='\n'
+            states += [state.name]
+        except:
+            out+='\n'
+            
+    sample, path = model.sample( 100000, path=True )
+    n = model.state_count() - 2
+    trans = np.zeros((n,n))
+    for state, n_state in zip( path[1:-2], path[2:-1] ):
+        state_name = int( state.name[1:] )-1            #!Нестандартное имя состояния
+        n_state_name = int( n_state.name[1:] )-1
+        trans[ state_name, n_state_name ] += 1
+    trans = (trans.T / trans.sum( axis=1 )).T
+     
+    out_2 = '        '
+    for s in states:
+        out_2 += '{:6}'.format(s)  
+    out_2+='\n'
+    
+    for i in range(n):
+        for j in range(n):
+            if j == 0:
+                out_2+='{0:5} {1:4.2E}  '.format(states[i], trans[i,j])
+            else:
+                out_2+='{:4.2E}  '.format(trans[i,j])
+        out_2+='\n'
+            
+    out+=out_2
+    return  out
 # if __name__ == "__main__":
 #     a = ['a','b','c','d','b']
 #

@@ -1,14 +1,20 @@
 import numpy as np
 import random
+from myutils import rename_state
 def gaussian_generator(mean, deviation, sample_size):
     data = np.array([np.random.normal(mean,deviation) for x in range(sample_size)])
     return data
 
+STAGE_DICT = {chr(x): x - 97 for x in range(97,123)}
+
 class Sequence:
-    def __init__(self, n, alphabet = [], period = 0, type = None, p = None, params = None):
+    def __init__(self, n, alphabet = [], period = 0, type = None, p = None, params = None, mean = None , varience = None):
         self.n = n
+        self.path = None
         self.period = period
         self.alphabet = sorted(alphabet)
+        self.mean = mean
+        self.varience = varience
         # print(self.alphabet)
         self.type = type
         # self.seq = np.zeros((n,),dtype=np.int64)
@@ -21,6 +27,13 @@ class Sequence:
             self.sequence, stages = self.signal_()
         if type == 'test_discret':
             self.test_discrete(params)
+        if type == 'continue':
+            self.continue_signal(mean,varience, params)
+
+    def continue_signal(self, mean, varince, params):
+        _sequence = self.test_discret(params)
+        self.path = [ STAGE_DICT[s] for s in _sequence]
+        self.sequence = [ np.random.normal(mean[i],varince[i]) for i in self.path]
 
     def random(self,p):
         h = np.zeros((len(p) + 1, 2))
@@ -47,7 +60,7 @@ class Sequence:
             params = {'a': {'len': [2, 5], 'depend_on': False},
                       'b': {'len': [2, 10], 'depend_on': False},
                       'c': {'len': [2, 7], 'depend_on': False},
-                      'd': {'len': [1, 5], 'depend_on': 'c' },
+                      'd': {'len': [1, 5], 'depend_on': False },
                       'e': {'len': [1, 3], 'depend_on': True}}
         length = 0
 
@@ -95,6 +108,7 @@ class Sequence:
         #                 r = np.random.choice( range(params[s]['len'][0], params[s]['len'][1] + 1))
         #                 for _ in range(r):
         #                     self.sequence.append(s)
+        self.path = [ STAGE_DICT[s] for s in self.sequence]
         self.n = len(self.sequence)
 
     def periodic(self):
@@ -204,6 +218,12 @@ class Signal(Sequence):
                                                        n).tolist()
                 break
         return sequence, path
+
+class Continue_Signal():
+    def __init__(self, _n, _mean, _varience):
+        self.n = _n
+        self.mean = _mean  
+        self.varience = _varience
 
 
 # def periodic(len, simbols):
