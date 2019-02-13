@@ -76,19 +76,28 @@ def print_model_distribution(model):
     states = []
     for state in model.states:
         out+='{:>10}: '.format(state.name)
+        
         try:
             if len(state.distribution.parameters) > 1:
-                print('Количество параметров распределения больше 1')            
-            for k,v in state.distribution.parameters[0].items():
-                temp = "'{}' = {:4.2E};    ".format(k,v)
-                out +=temp
-            out+='\n'
-            states += [state.name]
+                print('Количество параметров распределения больше 1, равно ')
+                m = state.distribution.parameters[0]
+                v = state.distribution.parameters[1]
+                temp = "m = {}, v = {} \n".format(m, v)
+                out +=temp         
+                states += [state.name]
+            else:        
+                # print('Количество параметров распределения больше 1, равно ', len(state.distibution.parameters))            
+                for k,v in state.distribution.parameters[0].items():
+                    temp = "'{}' = {:4.2E};    ".format(k,v)
+                    out +=temp
+                out+='\n'
+                states += [state.name]
         except:
             out+='\n'
             
     sample, path = model.sample( 100000, path=True )
     n = model.state_count() - 2
+    print(n)
     trans = np.zeros((n,n))
     for state, n_state in zip( path[1:-2], path[2:-1] ):
         state_name = int( state.name[1:] )-1            #!Нестандартное имя состояния
@@ -115,5 +124,18 @@ def print_model_distribution(model):
 #     a = ['a','b','c','d','b']
 #
 #     frequency_occurrence(a,False)
+
+def print_trans_matrix(model):
+    sample, path = model.sample( 100000, path=True )
+    n = model.state_count() - 2
+    trans = np.zeros((n,n))
+    for state, n_state in zip( path[1:-2], path[2:-1] ):
+        state_name = int( state.name[1:] )-1            #!Нестандартное имя состояния
+        n_state_name = int( n_state.name[1:] )-1
+        trans[ state_name, n_state_name ] += 1
+    
+    trans = (trans.T / trans.sum( axis=1 )).T
+    
+    print(trans) 
 
 

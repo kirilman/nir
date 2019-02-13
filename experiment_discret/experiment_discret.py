@@ -3,6 +3,7 @@ import os
 sys.path.append('/home/kirill/Projects/NIR')
 sys.path.append('/home/kirill/Projects/NIR')
 sys.path.append('/home/kirilman/Projects/nir/nir/')
+
 import sequence_generator as generator
 import numpy as np
 import matplotlib.pylab as plt
@@ -88,7 +89,6 @@ def experiment_discret(model, normal_seq, anormal_seq, N=150,alpha = ['a','b','c
             plt.plot(seq,'b')
             plt.savefig('/home/kirilman/Projects/nir/nir/experiment_discret/Graphs/sequence_graph__'+str(i)+'.png')
         log_prob_arr += [ model.log_probability(seq)]
-    
     plt.close()
 
     fig_log = plt.figure(figsize=(3.5,10))

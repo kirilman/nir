@@ -8,13 +8,13 @@ def gaussian_generator(mean, deviation, sample_size):
 STAGE_DICT = {chr(x): x - 97 for x in range(97,123)}
 
 class Sequence:
-    def __init__(self, n, alphabet = [], period = 0, type = None, p = None, params = None, mean = None , varience = None):
+    def __init__(self, n, alphabet = [], period = 0, type = None, p = None, params = None, mean = None , variance = None):
         self.n = n
         self.path = None
         self.period = period
         self.alphabet = sorted(alphabet)
         self.mean = mean
-        self.varience = varience
+        self.variance = variance
         # print(self.alphabet)
         self.type = type
         # self.seq = np.zeros((n,),dtype=np.int64)
@@ -28,12 +28,11 @@ class Sequence:
         if type == 'test_discret':
             self.test_discrete(params)
         if type == 'continue':
-            self.continue_signal(mean,varience, params)
+            self.continue_signal(mean,variance, params)
 
-    def continue_signal(self, mean, varince, params):
-        _sequence = self.test_discret(params)
-        self.path = [ STAGE_DICT[s] for s in _sequence]
-        self.sequence = [ np.random.normal(mean[i],varince[i]) for i in self.path]
+    def continue_signal(self, mean, variance, params):
+        self.test_discrete(params)
+        self.sequence = [ np.random.normal(mean[i],variance[i]) for i in self.path]
 
     def random(self,p):
         h = np.zeros((len(p) + 1, 2))
@@ -67,6 +66,8 @@ class Sequence:
         # print(params)
         for key, item in params.items():
             length += max(item['len'])
+            assert item['len'][0] < item['len'][1], 'Некорректный интервал [{};{}]'.format(item['len'][0], item['len'][1])
+
             
         count_cycle = round(self.n/length)
 
