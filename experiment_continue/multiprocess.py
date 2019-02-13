@@ -189,7 +189,7 @@ if __name__ ==  "__main__":
     #                                         mean=anomal_mean, variance=anomal_variance)
         
     #     anormal_signal = an_sequence.sequence
-        
+         
     #     model = HiddenMarkovModel.from_samples(NormalDistribution, n_components = n_comp, X = [normal_signal],
     #                                         labels = [labels], algorithm='labeled')
 
