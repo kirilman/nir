@@ -6,32 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="8bdd4bb6-8832-46a3-8f86-e6909440442b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей0.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей10.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей20.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей30.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей40.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей40.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей50.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей50.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей60.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей60.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей70.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей70.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей80.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей80.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей90.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Graphs/График последовательностей90.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/experiment_discret.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/experiment_discret.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/График log_probability0.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/График log_probability0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/График log_probability1.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/График log_probability1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/График log_probability2.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/График log_probability2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/График log_probability3.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/График log_probability3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/График log_probability4.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/График log_probability4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом0.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом1.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом2.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом3.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом4.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_discret/Дискретный с невозможным переходом4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Test Sequence-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Test Sequence-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/Test Sequence.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Test Sequence.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/experiment1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/experiment1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/Дискретный с невозможным переходом.png" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Дискретный с невозможным переходом.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sequence_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_9.png" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/Graphs/Log_and_seq/gh_9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/log_experiment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/log_experiment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/model.txt" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/model.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment_continue/multiprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_continue/multiprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/myutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myutils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="2250">
+              <caret line="127" selection-start-line="127" selection-end-line="127" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -59,19 +48,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiment_discret/experiment_discret.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="866">
+            <state relative-caret-position="2070">
               <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-666">
-              <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+            <state>
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/experiment_continue/multiprocess.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="165" column="44" selection-start-line="165" selection-start-column="44" selection-end-line="165" selection-end-column="44" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,6 +91,7 @@
       <find>tick</find>
       <find>random</find>
       <find>seed</find>
+      <find>nir</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,15 +103,16 @@
         <option value="$USER_HOME$/.conda/envs/nir/lib/python3.6/site-packages/networkx/drawing/nx_pylab.py" />
         <option value="$PROJECT_DIR$/model.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/myutils.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test_generator.py" />
         <option value="$PROJECT_DIR$/experiment_discret/experiment_discret.py" />
         <option value="$PROJECT_DIR$/sequence_generator.py" />
+        <option value="$PROJECT_DIR$/myutils.py" />
+        <option value="$PROJECT_DIR$/experiment_continue/multiprocess.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="131" />
     <option name="y" value="27" />
     <option name="width" value="1400" />
@@ -131,6 +131,16 @@
               <item name="nir" type="b2602c69:ProjectViewProjectNode" />
               <item name="nir" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="nir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nir" type="462c0819:PsiDirectoryNode" />
+              <item name=".ipynb_checkpoints" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nir" type="462c0819:PsiDirectoryNode" />
+              <item name="experiment_continue" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -141,6 +151,11 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -154,7 +169,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.experiment_discret">
+  <component name="RunManager" selected="Python.multiprocess">
     <configuration name="experiment_discret" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="NIR" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,6 +204,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="multiprocess" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="NIR" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiment_continue" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiment_continue/multiprocess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -239,34 +275,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="NIR" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myutils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.multiprocess" />
         <item itemvalue="Python.experiment_discret" />
         <item itemvalue="Python.test_generator" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.model" />
-        <item itemvalue="Python.utils" />
       </list>
     </recent_temporary>
   </component>
@@ -301,23 +316,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="-1" width="1686" height="1015" extended-state="7" />
+    <frame x="-3" y="-1" width="1686" height="1015" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49911818" visible="true" weight="0.16415209" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49911818" visible="true" weight="0.16415209" />
       <window_info id="Structure" order="1" sideWeight="0.50088185" side_tool="true" weight="0.24945295" />
       <window_info id="Favorites" order="2" sideWeight="0.50088185" side_tool="true" weight="0.24945295" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.499388" visible="true" weight="0.33333334" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39932507" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.499388" visible="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.34346846" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.07311586" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.29021373" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.62992126" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3198198" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.500612" side_tool="true" weight="0.3764045" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32845894" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3277027" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.249694" />
@@ -347,7 +362,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sequence_generator.py</url>
-          <line>100</line>
+          <line>115</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -359,6 +374,11 @@
           <url>file://$PROJECT_DIR$/test.py</url>
           <line>9</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/myutils.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -511,16 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myutils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -551,19 +561,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/nir/lib/python3.6/multiprocessing/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1775">
+          <caret line="669" selection-start-line="669" selection-end-line="669" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/activate">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/jsonschema">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/jupyter-notebook">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/jupyter-serverextension">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/jupyter-trust">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/nir/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myutils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/experiment_discret/experiment_discret.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
+        <state relative-caret-position="2070">
           <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sequence_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-666">
-          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        <state>
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiment_continue/multiprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>

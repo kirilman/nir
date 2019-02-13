@@ -1,8 +1,8 @@
 import sys
 import os
 sys.path.append('/home/kirilman/Projects/nir/nir/')
-sys.path.append('/home/kirill/Projects/NIR')
-sys.path.append('/home/kirill/Projects/NIR')
+sys.path.append('/home/kirill/Projects/nir')
+
 
 import sequence_generator as generator
 import numpy as np
@@ -91,7 +91,7 @@ def experiment(model, normal_seq, anomal_seq, alpha, norm_params, mean, variance
     # ax.set_yticks(range(len(alpha)))
 
     # plt.tight_layout()
-    plt.savefig('/home/kirilman/Projects/nir/nir/experiment_continue/Graphs/Log_and_seq/gh_'+str(num_launch)+'.png',dpi=150)
+    plt.savefig('Graphs/Log_and_seq/gh_'+str(num_launch)+'.png',dpi=150)
     plt.close()
     return model
 
@@ -126,8 +126,9 @@ def write_log(N, N_tr, norm_par, norm_mean, norm_var, an_params, anomal_mean, an
         file.close()
 
 if __name__ ==  "__main__":
-    N = 2500 # длина сигнала
-    N_train = 2500
+    N = 2000 # длина сигнала
+    N_pool = 10
+    N_train = 2000
     n_comp = 3
     count_launch = 10
     # norm_params = {'a': {'len': [10, 20], 'depend_on': False},
@@ -137,17 +138,17 @@ if __name__ ==  "__main__":
     # an_params =   {'a': {'len': [20, 40], 'depend_on': False},
     #                'b': {'len': [30, 120], 'depend_on': False},
     #                'c': {'len': [40, 50], 'depend_on': False}}
-    norm_params = {'a': {'len': [10, 20], 'depend_on': False},
-                   'b': {'len': [5, 15], 'depend_on': False},
-                   'c': {'len': [40, 50],'depend_on': False}}
+    norm_params = {'a': {'len': [20, 21], 'depend_on': False},
+                   'b': {'len': [30, 31], 'depend_on': False},
+                   'c': {'len': [30, 31],'depend_on': False}}
 
-    an_params =   {'a': {'len': [20, 40], 'depend_on': False},
-                   'b': {'len': [20, 40], 'depend_on': False},
-                   'c': {'len': [50, 100], 'depend_on': False}}
+    an_params =   {'a': {'len': [20, 21], 'depend_on': False},
+                   'b': {'len': [100, 101], 'depend_on': False},
+                   'c': {'len': [30, 31], 'depend_on': False}}
 
     alpha = ['a','b','c']
 
-    mean = [0, 0.5, 0.9] ; variance = [0.06, 0.01, 0.01]
+    mean = [0, 0.3, 0.6] ; variance = [0.01, 0.01, 0.01] + np.array([0.03]*3)
     anomal_mean = mean  
     # anomal_mean = mean + np.array([0,0.5,0]) 
     anomal_variance = variance 
@@ -161,7 +162,12 @@ if __name__ ==  "__main__":
     labels = list(map(myutils.rename_state,sequence.path))
     model = HiddenMarkovModel.from_samples(NormalDistribution, n_components = n_comp, X = [normal_signal],
                                         labels = [labels], algorithm='labeled')
-    pool = Pool(4)
+    fig = plt.figure(num = 1000, figsize=(15,4))
+    plt.plot(normal_signal,'b')
+    plt.plot([x / 3 for x in sequence.path], 'r')
+    plt.savefig('Graphs/path.png')
+    plt.close('all')
+    pool = Pool(N_pool)
     with open('model.txt', 'w') as file:
         out = print_model_distribution(model)
         file.write(out)
@@ -172,7 +178,6 @@ if __name__ ==  "__main__":
     start_time = time.time()
     res = pool.starmap(f,params)
 
-    print(res)
     pool.close()
     pool.join()
     print('Time ',time.time() - start_time)

@@ -104,7 +104,7 @@ def print_model_distribution(model):
         n_state_name = int( n_state.name[1:] )-1
         trans[ state_name, n_state_name ] += 1
     trans = (trans.T / trans.sum( axis=1 )).T
-     
+
     out_2 = '        '
     for s in states:
         out_2 += '{:6}'.format(s)  
@@ -116,6 +116,18 @@ def print_model_distribution(model):
                 out_2+='{0:5} {1:4.2E}  '.format(states[i], trans[i,j])
             else:
                 out_2+='{:4.2E}  '.format(trans[i,j])
+        out_2+='\n'
+
+    out_2 +='     '
+    for s in states:
+        out_2 += '{:6}'.format(s)
+    out_2+='\n'
+    for i in range(n):
+        for j in range(n):
+            if j == 0:
+                out_2+='{}  {:.2f}   '.format(states[i], trans[i,j])
+            else:
+                out_2+='{:.2f}   '.format(trans[i,j])
         out_2+='\n'
             
     out+=out_2
