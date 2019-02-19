@@ -1,8 +1,8 @@
 Параметры :
-    Длина сигнала = 2500, длина сиг.обучения = 2500
+    Длина сигнала = 2000, длина сиг.обучения = 2000
 Параметры нормального сигнала:
-{'a': {'len': [10, 20], 'depend_on': False}, 'b': {'len': [5, 15], 'depend_on': False}, 'c': {'len': [40, 50], 'depend_on': False}}
-    means = [0, 0.5, 0.9], var = [0.06, 0.01, 0.01] 
+{'a': {'len': [20, 21], 'depend_on': False}, 'b': {'len': [10, 11], 'depend_on': False}, 'c': {'len': [10, 11], 'depend_on': False}}
+    means = [0, 1, 2], var = [0.02 0.02 0.02] 
 Параметры аномального сигнала:
-    {'a': {'len': [20, 40], 'depend_on': False}, 'b': {'len': [20, 40], 'depend_on': False}, 'c': {'len': [50, 100], 'depend_on': False}}
-    means = [0, 0.5, 0.9], var = [0.06, 0.01, 0.01] 
+    {'a': {'len': [20, 21], 'depend_on': False}, 'b': {'len': [1, 2], 'depend_on': False}, 'c': {'len': [300, 301], 'depend_on': False}}
+    means = [0, 1, 2], var = [0.02 0.02 0.02] 

@@ -1,0 +1,109 @@
+{ 
+	"array":[
+		{
+			"N": 1000,
+			"type": "test_discret",
+			"alpha": ["a","b"],
+			"n_comp": 2,
+			"norm_params":{
+						   "a": {"len": [45, 45], "depend_on": "False"},
+						   "b": {"len": [30, 30], "depend_on": "False"}
+						  },
+			"an_params": {
+							"a": {"len": [50, 50], "depend_on": "False"},
+							"b": {"len": [70, 70], "depend_on": "False"}
+			},
+			"mean": [1,2],
+			"varience": [1,2],
+			"dir": "Exp_discret_two_stage"
+		},
+		{
+			"N": 1000,
+			"type": "test_discret",
+			"alpha": ["a","b"],
+			"n_comp": 2,
+			"norm_params":{
+						   "a": {"len": [40, 40], "depend_on": "False"},
+						   "b": {"len": [20, 20], "depend_on": "False"}
+						  },
+			"an_params": {
+							"a": {"len": [40, 40], "depend_on": "False"},
+							"b": {"len": [100, 100], "depend_on": "False"}
+			},
+			"mean": [1,2],
+			"varience": [1,2],
+			"dir": "Exp_discret_two_stage"
+		},
+		{
+			"N": 1000,
+			"type": "test_discret",
+			"alpha": ["a","b"],
+			"n_comp": 2,
+			"norm_params":{
+						   "a": {"len": [50, 50], "depend_on": "False"},
+						   "b": {"len": [20, 20], "depend_on": "False"}
+						  },
+			"an_params": {
+							"a": {"len": [50, 50], "depend_on": "False"},
+							"b": {"len": [70, 70], "depend_on": "False"}
+			},
+			"mean": [1,2],
+			"varience": [1,2],
+			"dir": "Exp_discret_two_stage"
+		},
+				{
+			"N": 1000,
+			"type": "test_discret",
+			"alpha": ["a","b"],
+			"n_comp": 2,
+			"norm_params":{
+						   "a": {"len": [50, 50], "depend_on": "False"},
+						   "b": {"len": [20, 20], "depend_on": "False"}
+						  },
+			"an_params": {
+							"a": {"len": [50, 50], "depend_on": "False"},
+							"b": {"len": [100, 100], "depend_on": "False"}
+			},
+			"mean": [1,2],
+			"varience": [1,2],
+			"dir": "Exp_discret_two_stage"
+		},
+		{
+			"N": 1000,
+			"type": "test_discret",
+			"alpha": ["a","b"],
+			"n_comp": 2,
+			"norm_params":{
+						   "a": {"len": [50, 50], "depend_on": "False"},
+						   "b": {"len": [5, 5], "depend_on": "False"}
+						  },
+			"an_params": {
+							"a": {"len": [50, 50], "depend_on": "False"},
+							"b": {"len": [25, 25], "depend_on": "False"}
+			},
+			"mean": [1,2],
+			"varience": [1,2],
+			"dir": "Exp_discret_two_stage"
+		},
+				{
+			"N": 1000,
+			"type": "test_discret",
+			"alpha": ["a","b","c"],
+			"n_comp": 3,
+			"norm_params":{
+						   "a": {"len": [20, 20], "depend_on": "False"},
+						   "b": {"len": [5, 5], "depend_on": "False"},
+						   "c": {"len": [15, 15], "depend_on": "False"}
+						  },
+			"an_params": {
+							"a": {"len": [20, 20], "depend_on": "False"},
+							"b": {"len": [25, 25], "depend_on": "False"},
+							"c": {"len": [15, 15], "depend_on": "False"}
+			},
+			"mean": [1,2],
+			"varience": [1,2],
+			"dir": "Exp_discret_two_stage"
+		}
+		
+		]
+}

@@ -66,7 +66,7 @@ class Sequence:
         # print(params)
         for key, item in params.items():
             length += max(item['len'])
-            assert item['len'][0] < item['len'][1], 'Некорректный интервал [{};{}]'.format(item['len'][0], item['len'][1])
+            assert item['len'][0] <= item['len'][1], 'Некорректный интервал [{};{}]'.format(item['len'][0], item['len'][1])
 
             
         count_cycle = round(self.n/length)

@@ -1,0 +1,26 @@
+{ 
+	"array":[
+		{
+			"N": 1000,
+			"type": "continue",
+			"alpha": ["a","b"],
+			"n_comp": 2,
+			"norm_params":{
+						   "a": {"len": [20, 20], "depend_on": "False"},
+						   "b": {"len": [30, 30], "depend_on": "False"},
+						   "c": {"len": [15, 15], "depend_on": "False"}
+						  },
+			"an_params": {
+							"a": {"len": [20, 20], "depend_on": "False"},
+							"b": {"len": [30, 30], "depend_on": "False"},
+							"c": {"len": [15, 15], "depend_on": "False"}
+			},
+			"mean": [1,2],
+			"varience": [0.1,0.1],
+			"anomal_mean":[1.2, 2],
+			"anomal_varience" : [0.1, 0.1],
+			"dir": "Exp_discret_two_stage"
+		}
+		
+		]
+}
